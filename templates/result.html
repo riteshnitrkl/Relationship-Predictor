@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="brand">
+        <div>
+          <div class="title">Prediction Result</div>
+          <div class="subtitle">Estimated Probabilities from your Inputs</div>
+        </div>
+      </div>
+      <a class="button secondary" href="{{ url_for('index') }}">&larr; Back</a>
+    </div>
+
+    <div class="cards">
+      <div class="card" style="display:grid; place-items:center; gap:8px;">
+        <div class="ring" style="--p: {{ happy }};">
+          <div class="val">{{ happy }}%</div>
+        </div>
+        <div class="label">Happy Marriage</div>
+      </div>
+
+      <div class="card" style="display:grid; place-items:center; gap:8px;">
+        <div class="ring" style="--p: {{ cheat }};">
+          <div class="val">{{ cheat }}%</div>
+        </div>
+        <div class="label">Cheating Risk</div>
+      </div>
+    </div>
+
+    <div class="result-summary">
+      <h2>Relationship Insights</h2>
+      <p><strong>Body Count:</strong> Lower body count is generally associated with higher trust and lower infidelity risk.</p>
+      <p><strong>Past Fidelity:</strong> A clean fidelity history usually leads to stronger, more stable relationships.</p>
+      <p><strong>Attachment Style:</strong> High attachment security is linked with stronger bonds and reduced cheating probability.</p>
+      <p><strong>Trust & Emotional Stability:</strong> High trust and emotional stability increase the likelihood of a happy marriage.</p>
+      <p><strong>Caring, Loving & Efforts:</strong> Consistent emotional investment boosts relationship satisfaction.</p>
+    </div>
+  </div>
+</body>
+</html>

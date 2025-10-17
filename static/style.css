@@ -1,0 +1,190 @@
+
+/* ---- Base Theme ---- */
+:root{
+  --bg:#f6f7fb;
+  --panel:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --accent-2:#7c3aed;
+  --ring:#c7d2fe;
+  --shadow: 0 10px 30px rgba(2,6,23,0.08);
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial;
+  color:var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, #e0e7ff 0%, rgba(224,231,255,0) 60%),
+              radial-gradient(1000px 500px at 110% 10%, #fde68a 0%, rgba(253,230,138,0) 60%),
+              var(--bg);
+}
+
+/* ---- Container / Header ---- */
+.wrapper{
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 18px;
+}
+.brand{
+  display:flex; align-items:center; gap:12px;
+}
+.logo{
+  width:40px; height:40px; border-radius:12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 18px rgba(37,99,235,0.35);
+}
+.title{
+  font-weight:800; letter-spacing:.2px; font-size: clamp(20px, 3vw, 28px);
+}
+.subtitle{
+  color:var(--muted); font-size:14px; margin-top:4px;
+}
+
+/* ---- Panel ---- */
+.panel{
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+/* ---- Form ---- */
+.grid-form{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap:16px;
+}
+
+label{
+  display:flex; flex-direction:column; gap:8px;
+  font-size:13px; color:var(--muted);
+}
+
+input, select{
+  font-size:16px;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: #fff;
+  color:var(--text);
+  outline: none;
+  transition: box-shadow .18s ease, border-color .18s ease, transform .05s ease;
+}
+input:focus, select:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.actions{
+  grid-column: 1 / -1;
+  display:flex; justify-content: flex-end; gap:10px;
+  margin-top: 6px;
+}
+
+button, .button{
+  appearance:none; border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  background: linear-gradient(135deg, var(--accent), #1d4ed8);
+  color:#fff; font-weight:700; letter-spacing:.2px;
+  box-shadow: 0 6px 16px rgba(29,78,216,0.25);
+  cursor:pointer;
+  transition: transform .06s ease, box-shadow .15s ease, filter .2s ease;
+}
+button:hover{ filter: brightness(1.03); }
+button:active{ transform: translateY(1px); }
+.button.secondary{
+  background: #eef2ff; color:#1e293b; box-shadow:none; border:1px solid var(--border);
+}
+
+/* ---- Cards / Result ---- */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+  margin-top:10px;
+}
+.card{
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+.card h2{ margin:0 0 8px 0; font-size:18px; }
+
+/* Ring gauge (pure CSS) */
+.ring{
+  --size: 180px;
+  --thickness: 14px;
+  --p: 50; /* percent */
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display:grid; place-items:center;
+  background:
+    conic-gradient(var(--accent) calc(var(--p)*1%), #e5e7eb 0),
+    radial-gradient(closest-side, #fff 80%, transparent 81%);
+  box-shadow: var(--shadow);
+  border:1px solid var(--border);
+}
+.ring .val{ font-size:28px; font-weight:800; }
+.ring .label{ margin-top:6px; color:var(--muted); font-size:13px; text-align:center; }
+
+/* Meter (linear) */
+.meter{
+  width:100%; height:12px; border-radius:999px;
+  background:#f1f5f9; border:1px solid var(--border); overflow:hidden;
+}
+.meter .fill{ height:100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+
+/* Footer / Nav actions */
+.footer-actions{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top: 16px;
+}
+small.note{ color:var(--muted); }
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  .actions{ justify-content:stretch; }
+  button, .button{ width:100%; }
+}
+
+.result-summary {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 30px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--border);
+}
+
+.result-summary h2 {
+  color: var(--text);
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.result-summary p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.result-summary strong {
+  color: var(--text);
+}

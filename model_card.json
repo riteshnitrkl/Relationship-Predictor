@@ -1,0 +1,40 @@
+{
+  "model_path": "pipeline.pkl",
+  "framework": "scikit-learn",
+  "targets": [
+    "Chances of Happy Marriage %",
+    "Chances of Cheating %"
+  ],
+  "features": [
+    "Gender",
+    "Relationship",
+    "No of Days Last Contact",
+    "Personality Type",
+    "Confidence",
+    "Empathy Level",
+    "Emotional Stability",
+    "Trust Parameter",
+    "No of Past Partners",
+    "No of Past Conflicts",
+    "Duration of Relationship",
+    "Level of Closeness",
+    "Average Message Response Time in hours",
+    "Caring",
+    "Loving",
+    "Efforts",
+    "Age",
+    "Behaviour",
+    "Past Relationship Patterns",
+    "History of Infidelity",
+    "Religion",
+    "Time spent together in hours per week",
+    "Attachment Style",
+    "Body Count"
+  ],
+  "metrics": {
+    "MAE_happy": 4.107688333333334,
+    "MAE_cheat": 7.939334444444442,
+    "MSE_happy": 27.882148015740736,
+    "MSE_cheat": 104.057187644074
+  }
+}

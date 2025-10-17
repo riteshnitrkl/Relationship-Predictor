@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relationship Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="brand">
+        <!-- Removed the blue square logo -->
+        <div>
+          <div class="title">Relationship Predictor</div>
+          <div class="subtitle">Enter The Details & Estimate Happy Marriage & Cheating Prediction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <form method="POST" action="{{ url_for('predict') }}" class="grid-form">
+
+        <label>Gender (Partner's)
+          <select name="Gender" required>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </label>
+
+        <label>Relationship
+          <select name="Relationship" required>
+            <option>Unknown</option>
+            <option>Ex</option>
+            <option>Current Partner</option>
+          </select>
+        </label>
+
+        <label>No of Days Last Contact
+          <input type="number" name="No_of_Days_Last_Contact" min="0" value="1" required>
+        </label>
+
+        <label>Personality Type
+          <select name="Personality_Type" required>
+            <option>Introvert</option>
+            <option>Extrovert</option>
+            <option>Ambivert</option>
+          </select>
+        </label>
+
+        <label>Confidence (0-1)
+          <input type="number" step="0.01" min="0" max="1" name="Confidence" value="0.7" required>
+        </label>
+
+        <label>Empathy Level
+          <select name="Empathy_Level" required>
+            <option>Low</option>
+            <option>Medium</option>
+            <option selected>High</option>
+          </select>
+        </label>
+
+        <label>Emotional Stability (1-10)
+          <input type="number" min="1" max="10" name="Emotional_Stability" value="7" required>
+        </label>
+
+        <label>Trust Parameter (1-10)
+          <input type="number" min="1" max="10" name="Trust_Parameter" value="7" required>
+        </label>
+
+        <label>No of Past Partners
+          <input type="number" min="0" name="No_of_Past_Partners" value="2" required>
+        </label>
+
+        <label>No of Past Conflicts
+          <input type="number" min="0" name="No_of_Past_Conflicts" value="1" required>
+        </label>
+
+        <label>Duration of Relationship (months)
+          <input type="number" min="0" name="Duration_of_Relationship" value="12" required>
+        </label>
+
+        <label>Level of Closeness (0/1)
+          <select name="Level_of_Closeness" required>
+            <option value="0">0</option>
+            <option value="1" selected>1</option>
+          </select>
+        </label>
+
+        <label>Average Message Response Time (hours)
+          <input type="number" step="0.1" min="0" name="Average_Message_Response_Time_hours" value="1.0" required>
+        </label>
+
+        <label>Caring (1-10)
+          <input type="number" min="1" max="10" name="Caring" value="8" required>
+        </label>
+
+        <label>Loving (1-10)
+          <input type="number" min="1" max="10" name="Loving" value="8" required>
+        </label>
+
+        <label>Efforts (1-10)
+          <input type="number" min="1" max="10" name="Efforts" value="8" required>
+        </label>
+
+        <label>Age
+          <input type="number" min="18" max="80" name="Age" value="25" required>
+        </label>
+
+        <label>Behaviour
+          <select name="Behaviour" required>
+            <option>Kind</option>
+            <option>Aggressive</option>
+          </select>
+        </label>
+
+        <label>Past Relationship Patterns
+          <select name="Past_Relationship_Patterns" required>
+            <option>Long Term</option>
+            <option>Casual</option>
+          </select>
+        </label>
+
+        <label>History of Infidelity (count)
+          <input type="number" min="0" name="History_of_Infidelity" value="0" required>
+        </label>
+
+        <label>Religion (0 same / 1 different)
+          <select name="Religion" required>
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+          </select>
+        </label>
+
+        <label>Time together (hours/week)
+          <input type="number" step="0.1" min="0" name="Time_spent_together_hours_per_week" value="15" required>
+        </label>
+
+        <label>Attachment Style
+          <select name="Attachment_Style" required>
+            <option>low</option>
+            <option selected>medium</option>
+            <option>high</option>
+          </select>
+        </label>
+
+        <label>Body Count
+          <input type="number" min="0" name="Body_Count" value="2" required>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Predict</button>
+        </div>
+      </form>
+
+      <div class="footer-actions">
+        <small class="note">Developed by :  Ritesh Chaurasiya CSE NIT Rourkela | Project for Fun | Dataset derived from Internet , Kaggle , Surveys & Statistics </small>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
