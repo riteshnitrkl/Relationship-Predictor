@@ -8,7 +8,7 @@ A minimal Flask app that predicts:
 - Chances of Happy Marriage (%)
 - Chances of Cheating (%)
 
-It uses a scikit-learn pipeline trained on a 3,000-row synthetic dataset.
+It uses a scikit-learn pipeline trained on a 3,000-row dataset.
 
 ## Quick Start
 
